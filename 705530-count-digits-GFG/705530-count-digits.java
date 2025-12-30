@@ -1,8 +1,11 @@
 class Solution {
     public int countDigits(int n) {
-        // code here
-        if (n==0) return 1;
-        int count=(int)Math.log10(n)+1;
+        if (n == 0) return 1;
+        
+        // 1. Convert to positive using Math.abs()
+        // 2. Then calculate log10
+        int count = (int) Math.log10(Math.abs((double)n)) + 1;
+        
         return count;
     }
 }
