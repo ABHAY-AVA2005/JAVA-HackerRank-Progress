@@ -6,12 +6,13 @@ class Solution {
         
         while(true)
         {
-            int m1=n+diff;
-            int m2=n-diff;
-            if(m1%m==0 and m2%m==0)  return abs(m1)>abs(m2)?m1:m2;
-            if(m1%m==0) return m1;
-            else if(m2%m==0) return m2;
-            else diff++;
+            int q=n/m;//q=quotinent
+            int n1=q*m;
+            int n2 =m*n>0?(q+1)*m:(q-1)*m;
+            
+            if(abs(n-n1)<abs(n-n2)) return n1;
+            else return n2;
+        
         }
     }
 };
